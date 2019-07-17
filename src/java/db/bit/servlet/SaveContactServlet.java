@@ -40,7 +40,18 @@ public class SaveContactServlet extends HttpServlet {
          String contact = request.getParameter("contact");
          String type = request.getParameter("type");
     
-        
+          if (("".equals(contact))&&("".equals(type))){
+           response.sendRedirect("contacts.jsp?id=" + ids);
+           return;
+         }
+         
+         if("".equals(contact)){       
+             contact = "";
+            }
+         if("".equals(type)){       
+             type = "";
+            }
+         
          Integer id2 = Integer.valueOf(ids2);
      
          Integer id = Integer.valueOf(ids);

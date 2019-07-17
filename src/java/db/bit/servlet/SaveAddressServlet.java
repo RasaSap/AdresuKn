@@ -42,7 +42,23 @@ public class SaveAddressServlet extends HttpServlet {
          String address = request.getParameter("address");
          String city = request.getParameter("city");
          String postalCode = request.getParameter("postalCode");
-     
+         
+          if (("".equals(address))&&("".equals(city))&&("".equals(postalCode))){
+           response.sendRedirect("addresses.jsp?id=" + ids);
+          return;
+         }
+         
+         if("".equals(address)){       
+             address = "";
+            }
+         if("".equals(city)){       
+             city = "";
+            }
+         
+         if("".equals(postalCode)){       
+             postalCode = "";
+            }
+        
          Integer id2 = Integer.valueOf(ids2);
          
        /* if (id2 == -1){
@@ -71,7 +87,7 @@ public class SaveAddressServlet extends HttpServlet {
           
              if (address != null && !"".equals(address)){
                 a.setAddress(address);
-             }
+             } 
              if (city != null && !"".equals(city)){
                 a.setCity(city);
              }
@@ -90,6 +106,8 @@ public class SaveAddressServlet extends HttpServlet {
                 DB.updateAddress(a);  
                 
                }
+          
+         
          
          
          response.sendRedirect("addresses.jsp?id=" + id + "&id2=" + a.getId());

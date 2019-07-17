@@ -14,7 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <style>
-           body * {
+            body * {
             margin: 0;
             padding: 0;
             vertical-align: top;
@@ -27,7 +27,7 @@
             form > input {
                 width: 50%;
             }
-             button {
+            button {
                 border: none;
                 padding: 12px 20px;
                 text-align: left;

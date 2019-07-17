@@ -45,13 +45,17 @@ public class SaveServlet extends HttpServlet {
          String bd = request.getParameter("bd");
          
          try{
-             System.err.println(ids);
+           // System.err.println(ids);
      
          Date bd1 = new SimpleDateFormat("yyyy-MM-dd").parse(bd);
         
          String salary = request.getParameter("salary");
+         if ("".equals(salary)){
+             salary = "";
+         }
          
          BigDecimal salary1 = new BigDecimal(salary);
+        
          
        
         if (ids == null){
@@ -72,6 +76,11 @@ public class SaveServlet extends HttpServlet {
              System.out.println("Neteisingai ivesta data");
              response.sendRedirect("index.jsp");
          }
+          catch(NumberFormatException ex){
+             ex.printStackTrace();
+             System.out.println("Neteisingai ivestas atlyginimas");
+             response.sendRedirect("index.jsp");
+         } 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

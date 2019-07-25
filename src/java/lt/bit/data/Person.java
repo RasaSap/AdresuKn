@@ -40,7 +40,7 @@ public class Person {
         this.birthDate = birthDate;
         this.salary = salary;
     }
-
+   
     public Integer getId() {
         return id;
     }
